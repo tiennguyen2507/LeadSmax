@@ -21,7 +21,7 @@ export const useInfoUser = () => {
     if (isUser) {
       callback();
     } else {
-      router.replace("/login");
+      router.replace("admin/login");
     }
   };
 

@@ -12,6 +12,9 @@ COPY . .
 
 RUN npm run build
 
+# Tạo thư mục uploads
+RUN mkdir -p uploads
+
 EXPOSE 3000
 
 CMD ["npm", "run", "start:prod"]

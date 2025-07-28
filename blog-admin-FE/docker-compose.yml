@@ -1,0 +1,62 @@
+version: "3.8"
+
+services:
+  # Development environment
+  frontend-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        NEXT_PUBLIC_BASE_PATH: ""
+        NEXT_PUBLIC_API_URL: "http://localhost:3001"
+        NEXT_PUBLIC_APP_NAME: "Blog Admin Dev"
+        NEXT_PUBLIC_DEBUG_MODE: "true"
+    environment:
+      - NEXT_PUBLIC_BASE_PATH=""
+      - NEXT_PUBLIC_API_URL=http://localhost:3001
+      - NEXT_PUBLIC_APP_NAME=Blog Admin Dev
+      - NEXT_PUBLIC_DEBUG_MODE=true
+    ports:
+      - "3000:3000"
+    profiles:
+      - dev
+
+  # Production environment
+  frontend-prod:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        NEXT_PUBLIC_BASE_PATH: "/admin"
+        NEXT_PUBLIC_API_URL: "https://api.yourdomain.com"
+        NEXT_PUBLIC_APP_NAME: "Blog Admin"
+        NEXT_PUBLIC_DEBUG_MODE: "false"
+    environment:
+      - NEXT_PUBLIC_BASE_PATH=/admin
+      - NEXT_PUBLIC_API_URL=https://api.yourdomain.com
+      - NEXT_PUBLIC_APP_NAME=Blog Admin
+      - NEXT_PUBLIC_DEBUG_MODE=false
+    ports:
+      - "3000:3000"
+    profiles:
+      - prod
+
+  # Staging environment
+  frontend-staging:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        NEXT_PUBLIC_BASE_PATH: "/admin"
+        NEXT_PUBLIC_API_URL: "https://api-staging.yourdomain.com"
+        NEXT_PUBLIC_APP_NAME: "Blog Admin Staging"
+        NEXT_PUBLIC_DEBUG_MODE: "true"
+    environment:
+      - NEXT_PUBLIC_BASE_PATH=/admin
+      - NEXT_PUBLIC_API_URL=https://api-staging.yourdomain.com
+      - NEXT_PUBLIC_APP_NAME=Blog Admin Staging
+      - NEXT_PUBLIC_DEBUG_MODE=true
+    ports:
+      - "3001:3000"
+    profiles:
+      - staging

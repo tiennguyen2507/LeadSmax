@@ -10,7 +10,6 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-// import { AppSwitcher } from "./app-switcher";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
@@ -51,24 +50,7 @@ export function Topbar() {
           />
         </div>
       </div>
-
-      {/* Right Section */}
       <div className="flex items-center gap-4">
-        {/* App Switcher */}
-        {/* <AppSwitcher /> */}
-
-        {/* Notifications */}
-        {/* <Button
-          variant="ghost"
-          size="icon"
-          className="relative"
-          aria-label="Notifications"
-        >
-          <Bell className="h-5 w-5" />
-          <span className="absolute top-0 right-0 h-2 w-2 rounded-full bg-red-600" />
-        </Button> */}
-
-        {/* Profile */}
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="ghost" className="relative h-8 w-8 rounded-full">
@@ -110,7 +92,7 @@ export function Topbar() {
                 localStorage.removeItem("access_token");
                 localStorage.removeItem("refresh_token");
                 localStorage.removeItem("user");
-                router.push("/login");
+                router.push("/admin/login");
               }}
             >
               Log out

@@ -22,7 +22,7 @@ import dynamic from "next/dynamic";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import UploadFile from "@/components/ui/UploadFile";
 import Link from "next/link";
-import Image from "next/image";
+
 import ClientHtmlViewer from "@/components/ui/ClientHtmlViewer";
 import { useInfoUser } from "@/lib/useInfoUser";
 
@@ -192,11 +192,9 @@ export default function BlogsPage() {
                     {/* Thumbnail */}
                     {post.thumbnail ? (
                       <div className="relative  h-32 overflow-hidden">
-                        <Image
+                        <img
                           src={post.thumbnail}
                           alt={post.title}
-                          width={400}
-                          height={200}
                           className="w-full h-full object-cover"
                         />
                       </div>

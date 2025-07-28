@@ -8,12 +8,12 @@ import {
 } from '@nestjs/common';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { ApiConsumes, ApiBody, ApiTags } from '@nestjs/swagger';
-import { CloudinaryService } from '../cloudinary/cloudinary.service';
+import { LocalStorageService } from './local-storage.service';
 
 @ApiTags('Image')
 @Controller('image')
 export class ImageController {
-  constructor(private readonly cloudinaryService: CloudinaryService) {}
+  constructor(private readonly localStorageService: LocalStorageService) {}
 
   @Post('upload')
   @ApiConsumes('multipart/form-data')
@@ -32,6 +32,6 @@ export class ImageController {
     @Body('folder') folder?: string,
   ) {
     if (!file) throw new BadRequestException('File is required');
-    return this.cloudinaryService.uploadFile(file, folder);
+    return this.localStorageService.uploadFile(file, folder);
   }
 }

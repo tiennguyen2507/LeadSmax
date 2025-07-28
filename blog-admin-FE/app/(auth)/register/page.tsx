@@ -119,7 +119,7 @@ export default function RegisterPage() {
       toast.success("Account created!", {
         description: "Your account has been created successfully.",
       });
-      router.push("/blogs");
+      router.push("/admin/blogs");
     } catch (err: unknown) {
       let msg: string | null = error;
       if (
@@ -227,7 +227,7 @@ export default function RegisterPage() {
         )}
         <div className="mt-4 text-center text-sm">
           Already have an account?{" "}
-          <Link href="/login" className="underline">
+          <Link href="/admin/login" className="underline">
             Sign in
           </Link>
         </div>

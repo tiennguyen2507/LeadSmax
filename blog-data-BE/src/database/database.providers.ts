@@ -1,12 +1,10 @@
 import * as mongoose from 'mongoose';
 import * as log from 'log-beautify';
 
-// const mongoLocal =
-//   process.env.MONGO_URI ||
-//   'mongodb://bakery_user:bakery_pass@localhost:27017/bakery_db?authSource=admin';
-
+// Use environment variable for MongoDB URI, fallback to local Docker MongoDB
 const mongoUri =
-  'mongodb+srv://tiennguyen2507:12345678a@cluster0.7pasb.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
+  process.env.MONGO_URI ||
+  'mongodb://leadsmax_user:leadsmax_pass@mongo:27017/leadsmax_db?authSource=admin';
 
 export const databaseProviders = [
   {

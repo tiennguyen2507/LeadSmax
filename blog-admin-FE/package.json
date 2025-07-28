@@ -5,8 +5,15 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
+    "build:dev": "NEXT_PUBLIC_BASE_PATH=\"\" next build",
+    "build:prod": "NEXT_PUBLIC_BASE_PATH=\"/admin\" next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "docker:dev": "docker-compose --profile dev up --build",
+    "docker:prod": "docker-compose --profile prod up --build",
+    "docker:staging": "docker-compose --profile staging up --build",
+    "docker:build-dev": "docker build --build-arg NEXT_PUBLIC_BASE_PATH=\"\" --build-arg NEXT_PUBLIC_API_URL=\"http://localhost:3001\" --build-arg NEXT_PUBLIC_APP_NAME=\"Blog Admin Dev\" --build-arg NEXT_PUBLIC_DEBUG_MODE=\"true\" -t blog-admin:dev .",
+    "docker:build-prod": "docker build --build-arg NEXT_PUBLIC_BASE_PATH=\"/admin\" --build-arg NEXT_PUBLIC_API_URL=\"https://api.yourdomain.com\" --build-arg NEXT_PUBLIC_APP_NAME=\"Blog Admin\" --build-arg NEXT_PUBLIC_DEBUG_MODE=\"false\" -t blog-admin:prod ."
   },
   "dependencies": {
     "@ckeditor/ckeditor5-build-classic": "^44.3.0",

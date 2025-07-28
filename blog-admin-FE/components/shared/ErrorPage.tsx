@@ -1,14 +1,20 @@
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { AlertTriangle, Home, RefreshCw } from "lucide-react"
-import type { ReactNode } from "react"
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { AlertTriangle, Home, RefreshCw } from "lucide-react";
+import type { ReactNode } from "react";
 
 interface ErrorPageProps {
-  title?: string
-  description?: string
-  errorCode?: string
-  actions?: ReactNode
+  title?: string;
+  description?: string;
+  errorCode?: string;
+  actions?: ReactNode;
 }
 
 export default function ErrorPage({
@@ -39,7 +45,7 @@ export default function ErrorPage({
                   Refresh Page
                 </Button>
                 <Button variant="outline" asChild>
-                  <Link href="/dashboard">
+                  <Link href="admin/blogs">
                     <Home className="mr-2 h-4 w-4" />
                     Go Home
                   </Link>
@@ -50,5 +56,5 @@ export default function ErrorPage({
         </CardContent>
       </Card>
     </div>
-  )
-} 
+  );
+}

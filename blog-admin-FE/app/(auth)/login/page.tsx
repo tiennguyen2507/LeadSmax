@@ -96,7 +96,7 @@ export default function LoginPage() {
       toast.success("Login successful!", {
         description: "Welcome back! You have been logged in successfully.",
       });
-      router.push("/blogs");
+      router.push("/admin/blogs");
     } catch (err: unknown) {
       let msg: string | null = error;
       if (
@@ -182,7 +182,7 @@ export default function LoginPage() {
         <div className="text-center text-sm">
           Don&apos;t have an account?{" "}
           <Link
-            href="/register"
+            href="/admin/register"
             className="text-blue-600 hover:text-blue-800 underline"
           >
             Sign up
