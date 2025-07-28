@@ -1,0 +1,14 @@
+node_modules
+.next
+.nuxt
+dist
+.git
+.gitignore
+Dockerfile
+.dockerignore
+README.md
+.env
+.env.*
+*.log
+.DS_Store
+ssl/ 
