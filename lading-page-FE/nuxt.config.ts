@@ -91,7 +91,7 @@ export default defineNuxtConfig({
       SITE_LOGO: process.env.SITE_LOGO || 'https://leadswise.network/logo.png',
       
       // Contact Information
-      SITE_PHONE: process.env.SITE_PHONE || '+84-xxx-xxx-xxxx',
+      SITE_PHONE: process.env.SITE_PHONE || '+84 372 571 498',
       SITE_AREA_SERVED: process.env.SITE_AREA_SERVED || 'VN',
       SITE_LANGUAGES: process.env.SITE_LANGUAGES || 'English,Vietnamese'
     }
