@@ -249,9 +249,10 @@ const loading = ref(true);
 const error = ref(null);
 
 // API URL - sử dụng computed
+const config = useRuntimeConfig();
 const API_URL = computed(
   () =>
-    `${process.env.NUXT_PUBLIC_API_URL || "http://localhost:3000"}/posts/${blogId.value}`
+    `${config.public.NUXT_PUBLIC_API_URL || "http://localhost:3000"}/posts/${blogId.value}`
 );
 
 // Fetch blog detail from API
